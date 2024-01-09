@@ -1,13 +1,9 @@
 /* eslint-disable */
 
-function TabButton({ children }) {
-  function handleClick() {
-    console.log("hello world");
-  }
-
+function TabButton({ children, onSelect }) {
   return (
     <li>
-      <button onClick={handleClick}>{children}</button>
+      <button onClick={onSelect}>{children}</button>
     </li>
   );
 }
