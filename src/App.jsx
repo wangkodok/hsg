@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { useState } from "react";
 
 import { CORE_CONCEPTS } from "./data";
 import Header from "./components/Header/Header.jsx";
@@ -6,8 +7,9 @@ import CoreConcept from "./components/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
 
 function App() {
+  const [selectedTopic, setSelectedTopic] = useState("click");
   function handleSelect(selectedButton) {
-    console.log(selectedButton);
+    setSelectedTopic(selectedButton);
   }
 
   return (
@@ -37,7 +39,7 @@ function App() {
             <TabButton onSelect={() => handleSelect("Props")}>Props</TabButton>
             <TabButton onSelect={() => handleSelect("State")}>State</TabButton>
           </menu>
-          Dynamic Content
+          {selectedTopic}
         </section>
       </main>
     </div>
